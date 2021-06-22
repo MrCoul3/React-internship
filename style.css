@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    transition: all ease .3s;
+    --myColor: #e39024;
+}
+
+*:hover {
+    transition: all ease .3s;
+}
+
+::selection {
+    color: blue;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header, footer {
+    font-family: Montserrat, Arial, sans-serif;
+}
+
+#start-ring {
+    position: absolute;
+    background-image: url(images/start-btn.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    top: 22px;
+    left: 526px;
+    animation: 5s linear infinite rotation;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+b:hover {
+    transition: all linear .01s;
+    cursor: pointer;
+    color: var(--myColor);
+}
+
+table, img {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+section {
+    font-family: 'Exo 2', Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-frame form {
+    padding: 0 10px;
+    width: 350px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.title {
+    text-align: center;
+}
+
+button,
+input[type='reset'],
+input[type='submit'] {
+    background: #cfcece;
+    box-shadow: 0 0 4px rgb(0 0 0 / 33%);
+}
+
+button {
+    width: 30px;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    width: 50px;
+}
+
+button:active {
+    background: red;
+    color: #fff;
+}
+
+input {
+    display: block;
+    width: 200px;
+    outline: none;
+    border: 1px solid #a4a4a4;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    color: #ffeb00;
+}
+
+input:not([type='radio'], [type='date'], [type='submit']):focus {
+    color: blue;
+}
+
+input[type="reset"] {
+    margin: 5px 0;
+    width: 50px;
+}
+
+input[type="reset"]:hover {
+    background: red;
+    color: white;
+    cursor: pointer;
+}
+
+.radio-conteiner {
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+}
+
+
+input[type="radio"] {
+    display: none;
+    width: auto;
+    margin-top: 5px;
+}
+
+input[type="radio"] + label {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #868686;
+    border-radius: 15px;
+}
+
+#male + label::after {
+    content: 'Male';
+    padding-left: 20px;
+}
+
+#female + label::after {
+    content: 'Female';
+    padding-left: 20px;
+}
+
+input[type="radio"]:checked + label {
+    background: #5888e9;
+    width: 18px;
+    height: 18px;
+    border-radius: 18px;
+}
+
+input[type="submit"] {
+    margin: 15px auto;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #4c4c4c;
+    color: white;
+}
+
+input[type="submit"]:active {
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+
+
+.image {
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+textarea {
+    margin: 10px 0;
+    resize: none;
+    width: 300px;
+}
+
+.image input[type="submit"] {
+    margin: 0 auto;
+}
+
+.table {
+
+}
+
+table, th, td {
+    border-collapse: collapse;
+}
+
+th, td {
+    height: 20px;
+    white-space: nowrap;
+}
+
+th {
+    text-align: left;
+    width: 200px;
+}
+
+
+tr:first-child {
+    background-color: #525f83;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #e8f2ff;
+}
+
+tr:hover {
+    background-color: #525f83;
+    color: white;
+    transition: color linear .05s;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+a:visited {
+    color: #9ca8b3;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+a:active {
+    font-size: 30px;
+}
+
+.str:active {
+    color: #2f00ff;
+}
+
+span {
+    color: #8f8f8f;
+}
+
+[class^='st'] {
+    color: red;
+}
+
+[class$='ber'] {
+    color: blue;
+}
+
+[href*='w3schools'] {
+    font-style: italic;
+}
+
+summary::marker {
+    color: #2f00ff;
+}
+li::marker {
+   font-size: 20px;
+    color: #969595;
+}

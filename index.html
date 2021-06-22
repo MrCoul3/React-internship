@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon"
+          href="https://w7.pngwing.com/pngs/712/335/png-transparent-computer-icons-icon-design-others.png">
+    <script>
+        function openForm() {
+            alert('fill in the field')
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Тестовое задание для <span><b>S</b></span><b>E</b><b>N</b><b>L</b><b>A</b></h1>
+    <div id="start-ring"></div>
+    <hr>
+</header>
+<main>
+    <section>
+        <div class="form-frame">
+            <form action="">
+                <h3 class="title">FORM</h3>
+                <button onclick="openForm()">&#129047;</button>
+                <hr>
+                <fieldset>
+                    <legend>Personal info:</legend>
+
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" id="age">
+
+                    <div class="radio-conteiner" style="margin: 5px 0;">
+                        <input type="radio" name="gender" id="male">
+                        <label for="male"></label>
+                        <input type="radio" name="gender" id="female">
+                        <label for="female"></label>
+                    </div>
+
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" name="birthday" id="birthday">
+
+                    <label for="url">Enter your homepage</label>
+                    <input type="url" name="url" id="url" placeholder="http://">
+
+                    <label for="language">Choose your language:</label>
+                    <input list="langs" name="language" id="language">
+                    <datalist id="langs">
+                        <option value="english">
+                        <option value="russian">
+                        <option value="spanish">
+                        <option value="chinese">
+                        <option value="francial">
+                    </datalist>
+                    <input type="reset" value="reset">
+                </fieldset>
+
+                <input type="submit" value="send">
+
+            </form>
+        </div>
+
+        <div class="image">
+            <img src="https://odnaminyta.com/wp-content/uploads/2020/11/screenshot_32.png" alt="">
+            <form action="">
+                <textarea name="" id="comment" cols="30" rows="5" placeholder="Leave a comment:"></textarea>
+                <input type="submit" value="send a comment">
+            </form>
+        </div>
+
+        <div class="table">
+            <table cellpadding="10px" style="width: 100%;">
+                <tr>
+                    <th>Description</th>
+                    <th>Links</th>
+                </tr>
+                <tr>
+                    <td>HTML Introduction</td>
+                    <td><a href="https://www.w3schools.com/html/html_intro.asp">https://www.w3schools.com/html/html_intro.asp</a></td>
+                </tr>
+                <tr>
+                    <td>HTML Elements</td>
+                    <td><a href="https://www.w3schools.com/html/html_elements.asp">https://www.w3schools.com/html/html_elements.asp</a></td>
+                </tr>
+                <tr>
+                    <td>HTML - The Head Element</td>
+                    <td><a href="https://www.w3schools.com/html/html_head.asp">https://www.w3schools.com/html/html_head.asp</a></td>
+                </tr>
+                <tr>
+                    <td>HTML Headings</td>
+                    <td><a href="https://www.w3schools.com/html/html_headings.asp">https://www.w3schools.com/html/html_headings.asp</a></td>
+                </tr>
+                <tr>
+                    <td>HTML Paragraphs</td>
+                    <td><a href="https://www.w3schools.com/html/html_paragraphs.asp">https://www.w3schools.com/html/html_paragraphs.asp</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>HTML Block and Inline Elements</td>
+                    <td><a href="https://www.w3schools.com/html/html_blocks.asp">https://www.w3schools.com/html/html_blocks.asp</a></td>
+                </tr>
+                <tr>
+                    <td>HTML Text Formatting</td>
+                    <td><a href="https://www.w3schools.com/html/html_formatting.asp">https://www.w3schools.com/html/html_formatting.asp</a></td>
+                </tr>
+                <tr>
+                    <td>HTML Form Elements</td>
+                    <td><a href="https://www.w3schools.com/html/html_form_elements.asp">https://www.w3schools.com/html/html_form_elements.asp</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>HTML Input Types</td>
+                    <td>
+                        <a href="https://www.w3schools.com/html/html_form_input_types.asp">https://www.w3schools.com/html/html_form_input_types.asp</a>
+                    </td>
+                </tr>
+            </table>
+            <details>
+                <summary>Some details</summary>
+                <ul>
+                    <li id="test">One</li>
+                    <li>Two</li>
+                    <li>Three</li>
+                </ul>
+            </details>
+        </div>
+
+    </section>
+</main>
+<footer>
+    <hr>
+    <h2><strong class="str">ITERATION <span class="number">1</span> and <span class="number">2</span></strong></h2>
+</footer>
+</body>
+</html>
