@@ -1,59 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>HTML and CSS</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon"
-          href="https://w7.pngwing.com/pngs/712/335/png-transparent-computer-icons-icon-design-others.png">
-    <script>
-        function openForm() {
-            alert('fill in the field')
-        }
-    </script>
+    <link rel="stylesheet" href="grid.css">
 </head>
 <body>
-<header>
-    <h1 style="font-size: 2rem">Тестовое задание для <span><b>S</b></span><b>E</b><b>N</b><b>L</b><b>A</b></h1>
-    <div id="start-ring"></div>
-    <hr>
-</header>
 
-<main>
-    <section>
-        <div class="form-frame">
-            <form action="">
-                <h3 class="title">FORM</h3>
-                <button onclick="openForm()">&#129047;</button>
-                <hr>
-                <fieldset>
-                    <legend>Personal info:</legend>
+<div class="grid-wrapper">
 
+    <div class="form-frame">
+        <form action="">
+            <h3 class="title">FORM</h3>
+            <button onclick="openForm()">&#129047;</button>
+            <hr>
+            <div class="form-data">
+                <div>
                     <label for="name">Name:</label>
                     <input type="text" name="name" id="name" required>
+                </div>
 
+                <div>
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="email">
+                </div>
 
+                <div>
                     <label for="age">Age:</label>
                     <input type="number" name="age" id="age">
+                </div>
 
-                    <div class="radio-conteiner" style="margin: 5px 0;">
-                        <input type="radio" name="gender" id="male">
-                        <label for="male"></label>
-                        <input type="radio" name="gender" id="female">
-                        <label for="female"></label>
-                    </div>
+                <div class="radio-conteiner" style="margin: 5px 0;">
+                    <input type="radio" name="gender" id="male">
+                    <label for="male"></label>
+                    <input type="radio" name="gender" id="female">
+                    <label for="female"></label>
+                </div>
 
+                <div>
                     <label for="birthday">Birthday:</label>
                     <input type="date" name="birthday" id="birthday">
+                </div>
 
+                <div>
                     <label for="url">Enter your homepage</label>
                     <input type="url" name="url" id="url" placeholder="http://">
+                </div>
 
+                <div>
                     <label for="language">Choose your language:</label>
                     <input list="langs" name="language" id="language">
+
                     <datalist id="langs">
                         <option value="english">
                         <option value="russian">
@@ -61,32 +60,27 @@
                         <option value="chinese">
                         <option value="francial">
                     </datalist>
-                    <input type="reset" value="reset">
-                </fieldset>
+                </div>
 
-                <input type="submit" value="send">
+                <input type="reset" value="reset">
+            </div>
 
-            </form>
-        </div>
+            <input type="submit" value="send">
 
-        <div class="image">
-            <img src="https://odnaminyta.com/wp-content/uploads/2020/11/screenshot_32.png" alt="">
-            <form action="">
-                <textarea name="" id="comment" cols="30" rows="5" placeholder="Leave a comment:"></textarea>
-                <input type="submit" value="send a comment">
-            </form>
-        </div>
+        </form>
+    </div>
 
+    <div class="container">
         <div class="table">
             <table cellpadding="10px" style="width: 100%;">
                 <tr>
                     <th>Description</th>
                     <th>Links</th>
                 </tr>
-
                 <tr>
                     <td>HTML Introduction</td>
-                    <td><a href="https://www.w3schools.com/html/html_intro.asp">https://www.w3schools.com/html/html_intro.asp</a>
+                    <td>
+                        <a href="https://www.w3schools.com/html/html_intro.asp">https://www.w3schools.com/html/html_intro.asp</a>
                     </td>
                 </tr>
                 <tr>
@@ -111,7 +105,8 @@
                 </tr>
                 <tr>
                     <td>HTML Block and Inline Elements</td>
-                    <td><a href="https://www.w3schools.com/html/html_blocks.asp">https://www.w3schools.com/html/html_blocks.asp</a>
+                    <td>
+                        <a href="https://www.w3schools.com/html/html_blocks.asp">https://www.w3schools.com/html/html_blocks.asp</a>
                     </td>
                 </tr>
                 <tr>
@@ -131,21 +126,37 @@
                     </td>
                 </tr>
             </table>
-            <details>
-                <summary>Some details</summary>
-                <ul>
-                    <li id="test">One</li>
-                    <li>Two</li>
-                    <li>Three</li>
-                </ul>
-            </details>
         </div>
+        <div class="flex-box">
+            <div class="flex-box wrapper">
+                <img src="images/screenshot_32.png" alt="">
+                <img src="images/screenshot_32.png" alt="">
+                <img src="images/screenshot_32.png" alt="">
+            </div>
+            <p>Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Lorem ipsum dolor
+                sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Lorem ipsum
+                dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Lorem ipsum
+                dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
 
-    </section>
-</main>
-<footer>
-    <hr>
-    <h2><strong class="str">ITERATION <span class="number">1</span> and <span class="number">2</span></strong></h2>
-</footer>
+</div>
+
+
 </body>
 </html>

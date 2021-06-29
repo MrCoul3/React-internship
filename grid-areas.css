@@ -1,0 +1,107 @@
+body {
+    padding: 0 20px;
+    display: grid;
+    grid-template-areas:
+    "form"
+    "table"
+    "images"
+    "fish";
+}
+
+.form-frame form,
+.table a,
+th {
+    width: auto;
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+.flex-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-frame {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+
+.form-frame form {
+    height: auto;
+}
+
+.form-data {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 10px;
+}
+
+fieldset > div {
+    width: 200px;
+}
+
+.flex-box.wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+img {
+    width: 100px;
+}
+
+p {
+    font-size: 24px;
+    font-family: 'Exo 2', Arial, sans-serif;
+    line-height: 40px;
+    margin: 0;
+}
+
+p:first-line {
+    color: #2f00ff;
+}
+
+.form-frame {
+    grid-area: form;
+}
+
+.table {
+    grid-area: table;
+}
+
+#images {
+    grid-area: images;
+}
+
+#fish {
+    grid-area: fish;
+}
+
+@media screen and (min-width: 1280px) {
+    body {
+        padding: 0 20px;
+        display: grid;
+        grid-gap: 20px;
+        grid-row-gap: 50px;
+        grid-column-gap: 10px;
+        grid-template-areas:
+    "table table form"
+    "images fish form";
+    }
+
+    .form-frame form {
+        height: 100vh;
+    }
+
+    .flex-box {
+        flex-direction: row;
+    }
+
+    .flex-box.wrapper {
+        flex-direction: column;
+    }
+}

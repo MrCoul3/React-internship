@@ -1,59 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Montserrat:wght@400;600;700&display=swap');
-
 * {
     box-sizing: border-box;
     transition: all ease .3s;
     --myColor: #e39024;
-}
-
-::selection {
-    color: blue;
-}
-
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-header, footer {
-    font-family: Montserrat, Arial, sans-serif;
-}
-
-#start-ring {
-    position: absolute;
-    background-image: url(images/start-btn.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 40px;
-    height: 40px;
-    top: 22px;
-    left: 526px;
-    animation: 5s linear infinite rotation;
-}
-
-@keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-b:hover {
-    transition: all linear .01s;
-    cursor: pointer;
-    color: var(--myColor);
-}
-
-table, img {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-section {
-    font-family: 'Exo 2', Arial, sans-serif;
-    display: flex;
-    justify-content: space-between;
 }
 
 .form-frame form {
@@ -62,18 +10,15 @@ section {
     height: 500px;
     border: 1px solid black;
 }
-
 .title {
     text-align: center;
 }
-
 button,
 input[type='reset'],
 input[type='submit'] {
     background: #cfcece;
     box-shadow: 0 0 4px rgb(0 0 0 / 33%);
 }
-
 button {
     width: 30px;
     margin: 0 auto;
@@ -172,54 +117,40 @@ input[type="submit"]:active {
     transform: scale3d(1.1, 1.1, 1.1);
 }
 
-.image {
-    margin: 0 20px;
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-}
 
-textarea {
-    margin: 10px 0;
-    resize: none;
-    width: 300px;
+.table {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
-.image input[type="submit"] {
-    margin: 0 auto;
-}
-
-table, th, td {
+.table, th, td {
     border-collapse: collapse;
 }
-
-th, td {
+.table th, .table td {
     height: 20px;
     white-space: nowrap;
 }
 
-th {
+.table th {
     text-align: left;
     width: 200px;
 }
 
 
-tr:first-child {
+.table tr:first-child {
     background-color: #525f83;
     color: #fff;
 }
 
-tr:nth-child(even) {
+.table tr:nth-child(even) {
     background-color: #e8f2ff;
 }
 
-tr:hover {
+.table tr:hover {
     background-color: #525f83;
     color: white;
     transition: color linear .05s;
 }
 
-a {
+.table a {
     display: block;
     text-decoration: none;
     width: 300px;
@@ -227,42 +158,17 @@ a {
     text-overflow: ellipsis;
 }
 
-a:visited {
-    color: #9ca8b3;
+
+img {
+    width: 100px;
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
-a:hover {
-    color: #ffffff;
-}
-
-a:active {
-    font-size: 30px;
-}
-
-.str:active {
-    color: #2f00ff;
-}
-
-span {
-    color: #8f8f8f;
-}
-
-[class^='st'] {
-    color: red;
-}
-
-[class$='ber'] {
-    color: blue;
-}
-
-[href*='w3schools'] {
-    font-style: italic;
-}
-
-summary::marker {
-    color: #2f00ff;
-}
-li::marker {
-   font-size: 20px;
-    color: #969595;
+p {
+    font-size: 26px;
+    font-family:  Arial, sans-serif;
+    font-weight: lighter;
+    line-height: 26px;
+    margin: 0;
 }
