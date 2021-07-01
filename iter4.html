@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iteration 4</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            let rect = document.querySelector('.rectangle');
+            let inputs = document.getElementsByTagName('input');
+            let links = document.querySelector('a');
+
+            rect.addEventListener('mouseover', function () {
+                this.classList.add('rectangle-color');
+            })
+
+            rect.addEventListener('click', function () {
+                this.classList.toggle('rectangle-scale')
+            })
+
+            rect.addEventListener('mouseout', function () {
+                this.classList.remove('rectangle-color');
+            })
+
+            for (let input of inputs) {
+
+                input.addEventListener('focus', function () {
+                   this.classList.add('input-focus')
+                });
+
+                input.addEventListener('blur',  () => {
+                    input.classList.remove('input-focus');
+                })
+            }
+
+            links.addEventListener('click', function (e) {
+                e.preventDefault();
+            })
+
+        });
+        
+        function contentAdder() {
+            let textFrame = document.querySelector('.text-frame');
+            let paragraph = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dolorum enim, fugit nesciunt nihil officia quis rerum soluta tempora. Impedit labore perspiciatis qui sequi? Alias maxime porro possimus quia ut?";
+            let pTag = document.createElement("p");
+            pTag.innerHTML = paragraph;
+            textFrame.append(pTag);
+        }
+
+        function contentDeleter() {
+            let pTags = document.getElementsByTagName('p');
+            for (let pTag of pTags) {
+                pTag.remove();
+            }
+        }
+    </script>
+    <style>
+        .wrapper {
+            display: flex;
+            margin: 20px 0;
+        }
+        input {
+            margin-right: 10px;
+            width: 150px;
+            height: 22px;
+            outline: none;
+            transition: all ease .3s;
+
+        }
+        button {
+            height: 30px;
+        }
+       .grid-wrapper {
+           display: grid;
+           width: 380px;
+           grid-template-columns: repeat(auto-fit, minmax(30px,1fr));
+       }
+       .rectangle {
+           cursor: pointer;
+           margin: 20px;
+           width: 100px;
+           height: 100px;
+           background: #79b6d2;
+           box-shadow: 0px 10px 15px rgb(0 0 0 / 20%);
+           border-radius: 5px;
+           transform: none;
+           transition: all ease .3s;
+           text-align: center;
+           padding-top: 37px;
+           box-sizing: border-box;
+           color: #8f8f8f;
+       }
+
+       .rectangle-color {
+           background: #a4d27d;
+       }
+       
+       .rectangle-scale {
+           border-radius: 50px/110px;
+           background: #ffd000;
+           transform: scale3d(1.1,1.1,1.1);
+           box-shadow: 0px 10px 15px rgb(0 0 0 / 50%);
+       }
+
+        .input-focus {
+            width: 160px;
+            height: 30px;
+            border: 2px solid #8282fd;
+            border-radius: 10px;
+            box-shadow: 0px 10px 15px rgb(0 0 0 / 50%);
+        }
+
+        .text-frame {
+            width: 300px;
+            border-radius: 10px;
+            border: 1px solid #9d9d9d;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+            color: #3c6abc;
+            border: 1px solid black;
+            width: 165px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        button {
+
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <input class="first" type="number" placeholder="enter first number">
+    <input class="second" type="number" placeholder="enter second number">
+    <div class="result">=</div>
+</div>
+
+<div class="grid-wrapper">
+    <button class="btn" value="+">+</button>
+    <button class="btn" value="-">-</button>
+    <button class="btn" value="*">*</button>
+    <button class="btn" value="/">/</button>
+    <button class="btn" value="**">**</button>
+    <button class="btn" value="%">%</button>
+</div>
+
+<div class="bool-res"></div>
+
+<a href="">Reload Prevent Default</a>
+
+<div class="rectangle">Click Me</div>
+
+<div class="text-frame">
+    <div class="flex-box" style="display: flex; justify-content: space-evenly; width: 260px;">
+        <button onclick="contentAdder()" class="add">Add Content</button>
+        <button onclick="contentDeleter()" class="del">Del Content</button>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dolorum enim, fugit nesciunt nihil officia quis rerum soluta tempora. Impedit labore perspiciatis qui sequi? Alias maxime porro possimus quia ut?
+    </p>
+
+</div>
+</body>
+<script src="script.js"></script>
+
+</html>
