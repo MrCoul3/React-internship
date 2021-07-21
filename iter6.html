@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iteration 6</title>
+    <script>
+        let hisForward = () => history.forward();
+        let hisBack = () => history.back();
+        let stateObj = {name: 'MyHistory'};
+        let pushState = () => history.pushState(stateObj, 'new state', "iter5.html");
+        let replaceState = () => history.replaceState(stateObj, 'second state', 'iter6.html');
+        let showState = () => {
+            document.querySelector('.show-state').value = history.state.name;
+        }
+    </script>
+    <style>
+        div, button {
+            margin: 10px;
+        }
+        .cookie-input {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<fieldset>
+    <legend>History</legend>
+    <button class="link">go to GOOGLE</button>
+    <button class="reload">reload page</button>
+    <button onclick="hisBack()" class="his-back"><- back</button>
+    <button onclick="hisForward()">forward -></button>
+    <button onclick="pushState()">push new history page</button>
+    <button onclick="replaceState()">replace history state</button>
+    <div>
+        <button onclick="showState()">show history state</button>
+        <input disabled class="show-state" type="text" placeholder="result of history state">
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Cookies</legend>
+    <div>
+        <input class="cookie-input cookie-name" type="text" placeholder="cookie name"> >
+        <input class="cookie-input cookie-value" type="text" placeholder="cookie value"> >
+        <button class="set-cookie">set cookie</button> >
+        <button class="get-cookie">get cookie</button> >
+        <input disabled class="show-cookie" type="text" placeholder="result of getCookie">
+    </div>
+</fieldset>
+
+<fieldset style="display: flex">
+    <legend>Local Storage</legend>
+    <div>
+        <button class="get-local-data">get data from local storage</button>
+        <div class="local-storage-output" style="border: 1px solid black; width: 300px; height: 100px;"></div>
+    </div>
+    <div style="display: flex; flex-direction: column">
+        <textarea class="local-storage-input" style="width: 300px; height: 150px;" type="text" placeholder="enter a new value of MYOptions"></textarea>
+        <button class="change-local-storage-data">change data to local storage</button>
+    </div>
+</fieldset>
+
+
+
+<script src="iteration6.js"></script>
+</body>
+</html>
