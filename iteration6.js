@@ -3,19 +3,18 @@
 // alert('Alert выводится с помощью функции alert(\'str\'), браузер ждет, пока пользователь не нажмет OK')
 
 // получение текущего URL
-console.log(location)
+console.log({location})
 console.log(location.href)
 
 // history
 document.querySelector('.link').addEventListener('click', () => location = "http://google.com"); // переход на новую страницу
 
-document.querySelector('.reload').addEventListener('click', ()=> {
-    setTimeout(()=>location.reload(), 1000);
-} );
+document.querySelector('.reload').addEventListener('click', () => {
+    setTimeout(() => location.reload(), 1000);
+});
 
 console.log(navigator.userAgent)
 console.log(navigator.platform)
-
 
 
 // cookie
@@ -52,13 +51,13 @@ let options = {
     samesite: 'strict'
 }
 
-document.querySelector('.set-cookie').addEventListener('click', ()=> {
+document.querySelector('.set-cookie').addEventListener('click', () => {
     setCookie(cookieName.value, cookieValue.value, options);
 })
 
-document.querySelector('.get-cookie').addEventListener('click', ()=> {
-   let cookie = getCookie(cookieName.value);
-   document.querySelector('.show-cookie').value = cookie;
+document.querySelector('.get-cookie').addEventListener('click', () => {
+    let cookie = getCookie(cookieName.value);
+    document.querySelector('.show-cookie').value = cookie;
 });
 
 
@@ -66,7 +65,7 @@ document.querySelector('.get-cookie').addEventListener('click', ()=> {
 
 localStorage.setItem('myOptions', JSON.stringify(options, null, 2));
 
-document.querySelector('.get-local-data').addEventListener('click', ()=>{
+document.querySelector('.get-local-data').addEventListener('click', () => {
     document.querySelector('.local-storage-output').innerHTML = localStorage.getItem('myOptions');
 
 })
@@ -88,7 +87,7 @@ for (let key in localStorage) {
 
 // console.log(Object.getOwnPropertyNames(localStorage))
 
-document.querySelector('.change-local-storage-data').addEventListener('click', ()=>{
+document.querySelector('.change-local-storage-data').addEventListener('click', () => {
     let localStorInput = document.querySelector('.local-storage-input');
     if (localStorInput.value.trim() !== '') {
         localStorage.setItem('myOptions', localStorInput.value.toString());
@@ -100,14 +99,82 @@ window.onstorage = e => {
     console.log(e)
 }
 
-console.log('____________________________')
+/** debuggin в консоли
+* */
+console.log("%c_____Debugging в консоли________", "color: gray; font-weight: 700; font-size: 22px");
 
-const errorMsg = '# не чётное число';
-for (let number = 2; number <= 5; number += 1) {
-    console.log('# равно ' + number);
-    console.assert(number % 2 === 0, {number: number, errorMsg: errorMsg});
-    // или, при использовании сокращения имён свойств в ECMAScript 2015:
-    // console.assert(number % 2 === 0, {number, errorMsg});
+// подстановки строк
+console.log('%cподстановки строк:', 'padding: 10px 0; font-weight: 700; font-size: 20px; font-style: italic')
+console.log('слово %s', 'xx');
+console.log('цифра %i', 2222);
+console.log('объект %o', options);
+console.log('float %f', 22.2);
+
+
+console.log('%cкрасивое логирование:', 'padding: 10px 0; font-weight: 700; font-size: 20px; font-style: italic')
+console.log(
+    '%c%s%c%s',
+    'color: yellow; font-size: 24px',
+    'Some yellow text',
+    'color: blue; font-size: 20px',
+    'Some yellow text'
+)
+
+let anotherText = "Another Text";
+console.log(`%c${anotherText}`, "color: white; background: #4600FFE5; padding: 20px")
+
+console.log(
+    '%c%s%c%s',
+    'padding: 10px 0 0; font-weight: 700; font-size: 20px; font-style: italic',
+    'логирование в фигурных скобках:\n',
+    'padding: 2px 0; font-weight: 300; font-size: 16px; font-style: italic; color: #8f8f8f',
+    'аккуратное логирование: ключ - имя переменной, а значение сам объект'
+
+)
+console.log({options}); // аккуратное логирование ключ - имя переменной, а значение сам объект
+console.log({anotherText})
+
+
+// логирование в виде таблицы
+function tableMethod() {
+    const problems = [
+        {id: 1, name: 'Onw'},
+        {id: 2, name: 'Two'},
+        {id: 3, name: 'Free'},
+        {id: 4, name: 'Four'},
+    ]
+    console.table(problems)
 }
+console.log('%ctable method:', 'padding: 10px 0; font-weight: 700; font-size: 20px; font-style: italic')
+tableMethod()
 
-console.log('слово %s', 'foo');
+// debugger; // на этой строке выполнение кода остановится
+
+function assertMethod(x, b) {
+    let errorMs = 'результат вычитания (b - x) < 50';
+    let result1 = b - x;
+
+    console.assert((b - x) > 50, {result: result1, error: errorMs});
+}
+console.log('%cassert method:', 'padding: 10px 0; font-weight: 700; font-size: 20px; font-style: italic')
+assertMethod(100, 70);
+
+console.log('%cerror/warn/trace/group method:', 'padding: 10px 0; font-weight: 700; font-size: 20px; font-style: italic')
+function errorMethod(string) {
+    function checkingFunction() {
+        console.trace();
+        if (typeof string != 'string') {
+            console.group('group warning');
+            console.warn('You must enter only a string type data');
+            console.group('group error');
+            console.error(`Type Error: ${string} is not string type`);
+            console.error(`Type Error: ${string} is a number`);
+            console.groupEnd();
+        }
+    }
+    checkingFunction();
+}
+errorMethod(1);
+
+
+
