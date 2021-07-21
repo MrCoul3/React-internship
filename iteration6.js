@@ -100,6 +100,14 @@ window.onstorage = e => {
     console.log(e)
 }
 
-console.dir(options);
+console.log('____________________________')
 
+const errorMsg = '# не чётное число';
+for (let number = 2; number <= 5; number += 1) {
+    console.log('# равно ' + number);
+    console.assert(number % 2 === 0, {number: number, errorMsg: errorMsg});
+    // или, при использовании сокращения имён свойств в ECMAScript 2015:
+    // console.assert(number % 2 === 0, {number, errorMsg});
+}
 
+console.log('слово %s', 'foo');
