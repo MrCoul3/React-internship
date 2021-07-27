@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iteration 7</title>
+    <link rel="stylesheet" href="fonts.css">
+    <style>
+        * {
+            font-family: 'Exo 2', Arial, sans-serif;
+            margin: 5px;
+        }
+
+        .input {
+            border: 1px solid #777777;
+            border-radius: 5px;
+            outline: none;
+            font-weight: bold;
+            height: 35px;
+        }
+
+        .text-input {
+            width: 200px;
+            padding-left: 10px;
+        }
+
+        .text-input + label {
+
+        }
+
+        .flex-box {
+            display: flex;
+            /*flex-direction: column;*/
+        }
+
+        .get-repo-btn {
+            /*position: absolute;*/
+            /*left: 250px;*/
+        }
+
+        .get-repo-btn {
+            background: #98bfba;
+        }
+
+        .repos-table {
+            display: none;
+            border-collapse: collapse;
+            border-color: #e0dfdf;
+            width: 400px;
+        }
+
+        .visible {
+            display: table;
+        }
+        thead {
+
+        }
+        label {
+            line-height: 10px;
+        }
+        .radio-conteiner * {
+            margin: 2px;
+        }
+        .iteration-task {
+            display: flex;
+        }
+        thead tr {
+            background-color: #525f83;
+            color: #fff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #e8f2ff;
+        }
+
+        tbody tr:hover {
+            background-color: #525f83;
+            color: white;
+            transition: color linear .05s;
+        }
+
+        .code img {
+            width: 465px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform ease-in-out .3s;
+        }
+        .code img:hover {
+            transform: scale3d(1.05,1.05,1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+<form method="get">
+    GET request: <input name="name" type="text" placeholder="Your name"><br/>
+    <input type="submit" value="Submit">
+</form>
+<hr>
+
+<section class="iteration-task">
+
+    <div class="block functionality">
+        <div class="flex-box radio-conteiner">
+            <div class="flex-box" style="flex-direction: column">
+                <div class="flex-box">
+                    <input id="promise" name="choose" type="radio" checked>
+                    <label for="promise">promises</label>
+                </div>
+                <div class="flex-box">
+                    <input id="async/await" name="choose" type="radio">
+                    <label  for="async/await">async/await</label>
+                </div>
+            </div>
+
+            <input id="promise-type-inp" class="input text-input" type="url" placeholder="enter any git-hub username">
+            <button class="input get-repo-btn">get repos</button>
+            <div>
+
+            </div>
+        </div>
+        <label style="color: #b8b8b8" for="promise-type-inp">https://api.github.com/users/<span class="user-name"></span>/repos</label>
+
+        <table valign="left" border="1px" cellpadding="5px" class="repos-table">
+            <caption style="font-weight: 600">Received repos by <span class="type-of-event"></span></caption>
+            <thead align="left">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+            </tr>
+            </thead>
+            <tbody align="left">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="block code">
+        <img src="./images/promise.jpg" alt="">
+    </div>
+</section>
+
+
+
+
+
+<script src="iteration7.js"></script>
+</body>
+</html>
