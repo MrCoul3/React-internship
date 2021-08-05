@@ -1,0 +1,74 @@
+.iter4 .wrapper {
+    display: flex;
+    margin: 20px 0;
+}
+
+.iter4 input {
+    margin-right: 10px;
+    width: 150px;
+    height: 22px;
+    outline: none;
+    transition: all ease .3s;
+
+}
+.iter4  button {
+    height: 30px;
+}
+.iter4 .grid-wrapper {
+    display: grid;
+    width: 380px;
+    grid-template-columns: repeat(auto-fit, minmax(30px,1fr));
+}
+.iter4  .rectangle {
+    cursor: pointer;
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    background: #79b6d2;
+    box-shadow: 0px 10px 15px rgb(0 0 0 / 20%);
+    border-radius: 5px;
+    transform: none;
+    transition: all ease .3s;
+    text-align: center;
+    padding-top: 37px;
+    box-sizing: border-box;
+    color: #8f8f8f;
+}
+
+.iter4 .rectangle-color {
+    background: #a4d27d;
+}
+
+.iter4 .rectangle-scale {
+    border-radius: 50px/110px;
+    background: #ffd000;
+    transform: scale3d(1.1,1.1,1.1);
+    box-shadow: 0px 10px 15px rgb(0 0 0 / 50%);
+}
+
+.iter4 .input-focus {
+    width: 160px;
+    height: 30px;
+    border: 2px solid #8282fd;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px rgb(0 0 0 / 50%);
+}
+
+.iter4  .text-frame {
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid #9d9d9d;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.iter4  a {
+    text-decoration: none;
+    display: block;
+    margin-top: 20px;
+    color: #3c6abc;
+    border: 1px solid black;
+    width: 165px;
+    border-radius: 5px;
+    text-align: center;
+}

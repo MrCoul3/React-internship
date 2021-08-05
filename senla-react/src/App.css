@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Montserrat:wght@400;600;700&display=swap');
+
+.guide-text {
+  position: absolute;
+  font-size: 30px;
+  color: #525f83;
+  font-family: 'Exo 2', Arial, sans-serif;
+  top: 300px;
+  left: 38%;
+}
+.guide-text-hide {
+  display: none;
+}
+.components-container {
+  padding: 56px 75px;
+}
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  position: absolute;
+}
+.buttons-container > button {
+  width: 35px;
+  height: 35px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: #6a8192;
+  color: #e8f2ff;
+  transition: all ease .2s;
+
+}
+.buttons-container > button:active {
+
+}
+.buttons-container > .button-active {
+  background: #ffb500;
+  border-radius: 35px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+}
+.component {
+  display: none;
+}
+.visible {
+  display: block;
+}
