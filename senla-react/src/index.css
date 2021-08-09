@@ -1,0 +1,29 @@
+#pages {
+    padding-left: 70px;
+}
+#buttons-container {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    position: absolute;
+    top: 20px;
+}
+.choose-btn {
+    width: 35px;
+    height: 35px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #6a8192;
+    color: #e8f2ff;
+    transition: all ease .2s;
+}
+
+.button-active {
+    background: #ffb500;
+    border-radius: 35px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+}
+

@@ -16,7 +16,7 @@ function Iter4() {
         })
 
         rect.addEventListener('click', function () {
-            this.classList.add('rectangle-scale');
+            this.classList.toggle('rectangle-scale');
 
         })
 

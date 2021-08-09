@@ -1,3 +1,4 @@
+/*
 import logo from './logo.svg';
 import './App.css';
 import $ from "jquery";
@@ -47,3 +48,4 @@ function App() {
 }
 
 export default App;
+*/

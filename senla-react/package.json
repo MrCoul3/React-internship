@@ -1,7 +1,7 @@
 {
-  "name": "senla-study",
-  "version": "0.1.0",
-  "private": true,
+  "name": "senla-react-app",
+  "licenses": "mrcoul",
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -35,5 +35,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  },
+  "description": "study project",
+  "main": "index.js",
+  "repository": "https://github.com/MrCoul3/SENLA",
+  "author": "MrCoul",
+  "license": "MIT"
 }
