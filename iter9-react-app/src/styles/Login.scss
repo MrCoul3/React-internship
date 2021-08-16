@@ -1,0 +1,45 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+#login {
+  margin-top: 50px;
+  .form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    border: 1px solid gray;
+    padding: 30px;
+    box-sizing: border-box;
+
+    .form-element {
+      margin: 0 auto;
+      height: 40px;
+      &--expression-picture {
+        width: 300px;
+        height: auto;
+      }
+      &--field {
+        width: 300px;
+        text-align: center;
+      }
+      &--send-btn {
+        width: 180px;
+      }
+    }
+    label {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 80px;
+      margin: auto;
+      width: 91px;
+    }
+
+
+  }
+}

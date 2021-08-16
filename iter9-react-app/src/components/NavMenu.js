@@ -20,15 +20,6 @@ export default function NavMenu() {
         <header>
             <nav>
                 <ToolTip />
-                <div className="login-btn">
-                    <NavLink activeClassName="selected" to='/'>
-                        <img
-                            {...tooltipsParams}
-                            data-tip='login'
-                            src="/images/user.png" alt=""/>
-                    </NavLink>
-                </div>
-
                 <ul className='nav-menu'>
 
                     <li>
@@ -51,6 +42,14 @@ export default function NavMenu() {
                     </li>
                     <li>
                         <NavLink activeClassName="selected" to='/mouse-tracker'>Render Prop</NavLink>
+                    </li>
+                    <li className="login-btn">
+                        <NavLink activeClassName="selected" exact to='/'>
+                            <img
+                                {...tooltipsParams}
+                                data-tip='login'
+                                src="/images/user.png" alt=""/>
+                        </NavLink>
                     </li>
                 </ul>
                 <hr/>
