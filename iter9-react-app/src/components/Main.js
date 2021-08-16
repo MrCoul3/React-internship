@@ -8,17 +8,17 @@ import Iter7 from "./Iter7";
 import Clock from "./Clock";
 import MouseTracker from "./MouseTracker";
 import Login from "./Login";
-import loginStatus from './Login';
 
 export default class Main extends React.Component {
+
     render() {
         return (
             <main>
                 <Switch>
                     <Route exact path='/'>
-                        <Login />
-                        {console.log(loginStatus)}
-                        {/*<Redirect exact from="/" to="/Home" />*/}
+                        {window.localStorage.getItem('login') === 'success' ?
+                            <Redirect  to="/Home" /> : <Login />
+                        }
                     </Route>
                     <Route  path='/Home'>
                         <Home/>

@@ -6,6 +6,7 @@ import {
 import NavMenu from "./NavMenu";
 import Main from './Main';
 import '../styles/App.css';
+import Footer from "./Footer";
 
 export default class App extends React.Component {
     render() {
@@ -13,6 +14,7 @@ export default class App extends React.Component {
             <Router>
                 <NavMenu />
                 <Main />
+                <Footer />
             </Router>
         );
     }

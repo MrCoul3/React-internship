@@ -1,0 +1,12 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 110px;
+  width: 100%;
+  border-top: 1px solid gray;
+  overflow: hidden;
+  img {
+    position: absolute;
+    bottom: 0;
+  }
+}

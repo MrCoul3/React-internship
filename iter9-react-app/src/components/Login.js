@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/Login.scss';
 
 
-export let loginStatus = '';
 export default class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -19,9 +18,14 @@ export default class Login extends React.Component {
     onClick() {
         if (this.state.login === 'Nik') {
              this.setState({
-                 login: 'login'
+                 login: 'success'
              })
-            loginStatus = this.state.login;
+
+        }
+    }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.state.login !== prevState.login) {
+            window.localStorage.setItem('login', 'success');
         }
     }
 
