@@ -1,0 +1,12 @@
+.tracker-frame {
+    height: 100vh;
+}
+
+.tracker-frame > p {
+    width: 200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 42%;
+    margin: auto;
+}

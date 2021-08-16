@@ -2,7 +2,6 @@ import $ from "jquery";
 import "./Iter4.css";
 
 function Iter4() {
-
     let paragraph = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dolorum enim, fugit nesciunt nihil officia quis rerum soluta tempora. Impedit labore perspiciatis qui sequi? Alias maxime porro possimus quia ut?";
     $(document).ready(() => {
         let rect = document.querySelector('.rectangle');

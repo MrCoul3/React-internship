@@ -1,0 +1,86 @@
+
+.iter7 {
+    font-family: 'Exo 2', Arial, sans-serif;
+}
+
+.iter7 .input {
+    border: 1px solid #777777;
+    border-radius: 5px;
+    outline: none;
+    font-weight: bold;
+    height: 35px;
+}
+
+.iter7 .text-input {
+    width: 200px;
+    padding-left: 10px;
+}
+
+
+
+.iter7 .flex-box {
+    display: flex;
+    /*flex-direction: column;*/
+}
+
+.get-repo-btn {
+    /*position: absolute;*/
+    /*left: 250px;*/
+}
+
+.get-repo-btn {
+    background: #98bfba;
+}
+
+.repos-table {
+    display: none;
+    border-collapse: collapse;
+    border-color: #e0dfdf;
+    width: 400px;
+}
+
+.visible {
+    display: table;
+}
+
+.iter7 .label {
+    line-height: 10px;
+}
+.radio-container * {
+    margin: 2px;
+}
+.iteration-task {
+    display: flex;
+}
+.iteration-task > flex {
+    display: flex;
+    flex-direction: column;
+}
+.iter7 thead tr {
+    background-color: #525f83;
+    color: #fff;
+}
+
+.iter7 tbody tr:nth-child(even) {
+    background-color: #e8f2ff;
+}
+
+.iter7 tbody tr:hover {
+    background-color: #525f83;
+    color: white;
+    transition: color linear .05s;
+}
+
+.iter7 .code img {
+    width: 465px;
+    margin-left: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform ease-in-out .3s;
+}
+.code img:hover {
+    transform: scale3d(1.05,1.05,1.05);
+}
+
+.iter7 .descr {
+    font-size: 12px;
+}

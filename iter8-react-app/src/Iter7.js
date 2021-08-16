@@ -3,102 +3,105 @@ import $ from "jquery";
 
 function iter7(props) {
     $(document).ready(() => {
-        let promiseInputField = document.querySelector('#promise-type-inp');
-        let promiseUserName = document.querySelector('.user-name');
-        let getRepoBtn = document.querySelector('.get-repo-btn');
-        let reposTable = document.querySelector('.repos-table');
-        let tbody = document.querySelector('.repos-table tbody')
-        let captionOfTableName = document.querySelector('.type-of-event');
-        let radioInputs = document.querySelectorAll("input[type='radio']");
-        let typeOfEvent = null;
-        let codeImg = document.querySelector('.code img');
+        function script() {
+            let promiseInputField = document.querySelector('#promise-type-inp');
+            let promiseUserName = document.querySelector('.user-name');
+            let getRepoBtn = document.querySelector('.get-repo-btn');
+            let reposTable = document.querySelector('.repos-table');
+            let tbody = document.querySelector('.repos-table tbody')
+            let captionOfTableName = document.querySelector('.type-of-event');
+            let radioInputs = document.querySelectorAll("input[type='radio']");
+            let typeOfEvent = null;
+            let codeImg = document.querySelector('.code img');
 
-        for (let radio of radioInputs) {
-            if (radio.checked) typeOfEvent = radio.id;
-            radio.onchange = () => {
-                typeOfEvent = radio.id;
+            for (let radio of radioInputs) {
+                if (radio.checked) typeOfEvent = radio.id;
+                radio.onchange = () => {
+                    typeOfEvent = radio.id;
+                    if (typeOfEvent === 'promise') {
+                        codeImg.setAttribute('src', './images/promise.jpg')
+                    } else {
+                        codeImg.setAttribute('src', './images/async.jpg')
+                    }
+                }
+            }
+
+            promiseInputField.oninput = () => {
+                promiseUserName.innerHTML = promiseInputField.value;
+            }
+
+            getRepoBtn.onclick = () => {
+                let url = `https://api.github.com/users/${promiseInputField.value}/repos`;
+                captionOfTableName.innerHTML = typeOfEvent;
+                let insertedRows = document.querySelectorAll('.inserted');
+                if (insertedRows) {
+                    for (let row of insertedRows) {
+                        row.remove();
+                    }
+                }
                 if (typeOfEvent === 'promise') {
-                    codeImg.setAttribute('src', './images/promise.jpg')
+                    getReposByPromises(url);
                 } else {
-                    codeImg.setAttribute('src', './images/async.jpg')
+                    getReposByAsync(url);
                 }
             }
-        }
-
-        promiseInputField.oninput = () => {
-            promiseUserName.innerHTML = promiseInputField.value;
-        }
-
-        getRepoBtn.onclick = () => {
-            let url = `https://api.github.com/users/${promiseInputField.value}/repos`;
-            captionOfTableName.innerHTML = typeOfEvent;
-            let insertedRows = document.querySelectorAll('.inserted');
-            if (insertedRows) {
-                for (let row of insertedRows) {
-                    row.remove();
-                }
-            }
-            if (typeOfEvent === 'promise') {
-                getReposByPromises(url);
-            } else {
-                getReposByAsync(url);
-            }
-        }
 
 // 1) с использованием Promise
-        function getReposByPromises(url) {
-            let promise = new Promise(((resolve, reject) => {
-                // console.log(promise)
-                fetch(url)
-                    .then(response => {
-                        if (response.ok) {
-                            resolve(response.json());
-                        } else {
-                            reject(Error('status ' + response.status))
+            function getReposByPromises(url) {
+                let promise = new Promise(((resolve, reject) => {
+                    // console.log(promise)
+                    fetch(url)
+                        .then(response => {
+                            if (response.ok) {
+                                resolve(response.json());
+                            } else {
+                                reject(Error('status ' + response.status))
+                            }
+                        });
+                }));
+                promise
+                    .then(data => {
+                        reposTable.classList.add('visible');
+                        for (let repo of data) {
+                            tbody.insertAdjacentHTML('afterbegin', `
+            <tr class="inserted">
+                <td>${repo.id}</td>
+                <td>${repo.name}</td>
+            </tr>`)
                         }
-                    });
-            }));
-            promise
-                .then(data => {
+                    })
+                    .catch(error => console.log('Ошибка: ' + error.message))
+            }
+
+// 2) с использованием async/await
+            async function getReposByAsync(url) {
+                try {
+                    let response = await fetch(url);
+                    let repos = await response.json();
                     reposTable.classList.add('visible');
-                    for (let repo of data) {
+                    for (let repo of repos) {
+                        // console.log(repo)
                         tbody.insertAdjacentHTML('afterbegin', `
             <tr class="inserted">
                 <td>${repo.id}</td>
                 <td>${repo.name}</td>
             </tr>`)
                     }
-                })
-                .catch(error => console.log('Ошибка: ' + error.message))
-        }
-
-// 2) с использованием async/await
-        async function getReposByAsync(url) {
-            try {
-                let response = await fetch(url);
-                let repos = await response.json();
-                reposTable.classList.add('visible');
-                for (let repo of repos) {
-                    // console.log(repo)
-                    tbody.insertAdjacentHTML('afterbegin', `
-            <tr class="inserted">
-                <td>${repo.id}</td>
-                <td>${repo.name}</td>
-            </tr>`)
+                } catch (err) {
+                    // console.log(err)
                 }
-            } catch (err) {
-                // console.log(err)
             }
+
+
         }
-
-
-
+        script();
     });
 
     let {type, author: authorName, visibility} = props;
 
     return (
         <div visibility={visibility} author={authorName} className='iter7'>
+
             <form action="">
                 GET request: <input name="name" type="text" placeholder="Your name"/><br/>
                 <input type="submit" value="Submit"/>

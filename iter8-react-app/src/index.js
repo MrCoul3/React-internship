@@ -6,14 +6,10 @@ import Iter5 from "./Iter5"
 import Iter6 from "./Iter6";
 import Iter7 from "./Iter7";
 
-
-
 const root = document.getElementById('pages');
 const btnsContainer = document.getElementById('buttons-container');
 render(insertBtns(), btnsContainer);
 render(showPage(), root);
-
-
 
 function render(arg1, arg2) {
     return ReactDOM.render(arg1, arg2);
@@ -49,8 +45,6 @@ function showPage() {
         })
     }
 }
-
-
 
 
 

@@ -1,0 +1,12 @@
+.home {
+
+}
+.home > h1 {
+    display: block;
+    width:1250px;
+    margin: 70px auto 0;
+    color: #525f83;
+    font-size: 30px;
+    letter-spacing: 0.13em;
+    font-family: 'Exo 2', Arial, sans-serif;
+}
