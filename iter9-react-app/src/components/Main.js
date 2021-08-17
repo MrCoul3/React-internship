@@ -16,11 +16,9 @@ export default class Main extends React.Component {
             <main>
                 <Switch>
                     <Route exact path='/'>
-                        {window.localStorage.getItem('login') === 'success' ?
-                            <Redirect  to="/Home" /> : <Login />
-                        }
+                        <Login />
                     </Route>
-                    <Route  path='/Home'>
+                    <Route path='/Home'>
                         <Home/>
                     </Route>
                     <Route path='/iteration_4'>

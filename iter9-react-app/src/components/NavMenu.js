@@ -1,27 +1,23 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import Redirect from "react-router-dom";
 import '../styles/NavMenu.css';
+// import {tooltipsParams} from './App';
 import ReactTooltip from "react-tooltip";
 
-// sdsad
 function ToolTip() {
-        return (<ReactTooltip effect='solid' id="toolTip1"/>);
+    return (<ReactTooltip effect='solid' id="toolTip1"/>);
 }
-
+ let tooltipsParams = {
+    'data-background-color': "#5A5A5A",
+    'data-text-color': "#fff",
+    'data-for': 'toolTip1'
+};
 export default function NavMenu() {
-    let tooltipsParams = {
-        'data-background-color': "#5A5A5A",
-        'data-text-color': "#fff",
-        'data-for': 'toolTip1'
-    };
-
     return (
         <header>
             <nav>
                 <ToolTip />
                 <ul className='nav-menu'>
-
                     <li>
                         <NavLink activeClassName="selected" to='/Home'>Home</NavLink>
                     </li>
