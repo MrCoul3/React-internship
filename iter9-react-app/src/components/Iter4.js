@@ -41,16 +41,15 @@ class CalculateApp extends React.Component {
     }
 
     componentDidUpdate() {
-
     }
 
     render() {
         return (
             <calculate-app>
                 <div className="wrapper">
-                    <input name='val1' onChange={this.onChange} className='first' type="number"
+                    <input name='val1' value={this.state.val1} onChange={this.onChange} className='first' type="number"
                            placeholder="enter first number"/>
-                    <input name='val2' onChange={this.onChange} className='second' type="number"
+                    <input name='val2' value={this.state.val2} onChange={this.onChange} className='second' type="number"
                            placeholder="enter first number"/>
                     <div className="result">= {this.state.result}</div>
                 </div>
