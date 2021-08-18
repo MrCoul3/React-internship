@@ -36,9 +36,7 @@ export default class MouseTracker extends React.Component {
     render() {
         return (
             <section className={'page render-prop mouse-tracker'}>
-                <Mouse render={function(mous) {
-                    return <Cat m={mous}/>
-                }} />
+                <Mouse render={state =><Cat m={state}/>}/>
             </section>
         );
     }
