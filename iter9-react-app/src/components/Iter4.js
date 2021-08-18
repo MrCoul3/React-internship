@@ -8,7 +8,6 @@ class Button extends React.Component {
         return e('button', {
             onClick: this.props.handleClick,
             className: "btn",
-            value: this.props.value1
         }, this.props.inner);
     }
 }
@@ -33,16 +32,17 @@ class CalculateApp extends React.Component {
     }
 
     calculator(event) {
-        this.setState({
+        this.setState(state => ({
             //eslint-disable-next-line no-eval
-            result: eval(`${+this.state.val1}${event.target.value}${+this.state.val2}`)
-        })
+            result: eval(`${+state.val1}${event.target.value}${+state.val2}`)
+        }))
     }
 
     componentDidUpdate() {
     }
 
     render() {
+
         return (
             <calculate-app>
                 <div className="wrapper">
@@ -151,7 +151,6 @@ class ContentChangerApp extends React.Component {
         );
     }
 }
-
 
 export default class Iter4 extends React.Component {
     render() {

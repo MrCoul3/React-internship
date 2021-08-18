@@ -9,9 +9,9 @@ export default class Iter5 extends React.Component {
         }
     }
     ask() {
-        this.setState({
-            color: (this.state.color === '') ? 'red' : ''
-        })
+        this.setState(state => ({
+            color: (state.color === '') ? 'red' : ''
+        }))
         window.confirm("Вы согласны?") ? alert("Вы согласились.") : alert("Вы отменили выполнение.")
     }
     render() {

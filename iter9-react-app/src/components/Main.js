@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect, Switch } from 'react-router';
+import { Route, Switch } from 'react-router';
 import Home from "./Home";
 import Iter4 from "./Iter4";
 import Iter5 from "./Iter5";
