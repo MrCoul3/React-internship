@@ -42,7 +42,7 @@ export default class Login extends React.Component {
                     <ToolTip />
                     <input value='Nik' onChange={this.onChange.bind(this)}   name='login' className='form-element form-element--field' type="text" placeholder='Login'/>
                     <label  htmlFor='login' >example: Nik</label>
-                    <button onClick={this.onClick.bind(this)} className='form-element form-element--send-btn'>send</button>
+                    <button {...tooltipsParams} data-tip='click Send for Redirect to Home page ' onClick={this.onClick.bind(this)} className='form-element form-element--send-btn'>send</button>
                 </div>
                 {this.state.redirect}
             </section>
