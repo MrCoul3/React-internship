@@ -19,7 +19,6 @@ class CalculateApp extends React.Component {
         this.onChange = this.onChange.bind(this);
         this.calculator = this.calculator.bind(this);
         this.state = {
-            symbol: '',
             val1: '',
             val2: '',
             result: ''

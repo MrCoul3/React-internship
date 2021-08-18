@@ -25,9 +25,9 @@ import '../styles/MouseTracker.css';
 
 class Cat extends React.Component {
     render() {
-        const mouse = this.props.m;
+        const state = this.props.m;
         return (
-            <img src="../images/Fashion-Cat.webp" style={{ position: 'absolute', left: mouse.x, top: mouse.y, width: '100px'}} />
+            <img src="../images/Fashion-Cat.webp" style={{ position: 'absolute', left: state.x, top: state.y, width: '100px'}} />
         );
     }
 }
