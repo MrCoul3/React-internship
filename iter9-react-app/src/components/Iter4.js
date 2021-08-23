@@ -37,7 +37,12 @@ class CalculateApp extends React.Component {
             result: eval(`${+state.val1}${event.target.value}${+state.val2}`)
         }))
     }
-
+    componentDidMount() {
+        let buttons = document.querySelectorAll('.calculate-btn');
+        for (let btn of buttons) {
+            btn.onclick = (e) => this.calculator(e)
+        }
+    }
     componentDidUpdate() {
     }
 
@@ -53,12 +58,12 @@ class CalculateApp extends React.Component {
                     <div className="result">= {this.state.result}</div>
                 </div>
                 <div className="grid-wrapper">
-                    <button onClick={this.calculator} className="btn" value="+">+</button>
-                    <button onClick={this.calculator} className="btn" value="-">-</button>
-                    <button onClick={this.calculator} className="btn" value="*">*</button>
-                    <button onClick={this.calculator} className="btn" value="/">/</button>
-                    <button onClick={this.calculator} className="btn" value="**">**</button>
-                    <button onClick={this.calculator} className="btn" value="%">%</button>
+                    <button className="btn calculate-btn" value="+">+</button>
+                    <button className="btn calculate-btn" value="-">-</button>
+                    <button className="btn calculate-btn" value="*">*</button>
+                    <button className="btn calculate-btn" value="/">/</button>
+                    <button className="btn calculate-btn" value="**">**</button>
+                    <button className="btn calculate-btn" value="%">%</button>
                 </div>
             </calculate-app>);
     }
