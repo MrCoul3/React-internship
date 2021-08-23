@@ -23,7 +23,7 @@ class CalculateApp extends React.Component {
             result: ''
         }
     }
-
+ 
     onChange(event) {
         const {name, value} = event.target;
         this.setState({
