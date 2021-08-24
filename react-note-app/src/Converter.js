@@ -6,6 +6,7 @@ function useConvertTo(value) {
     useEffect(()=>{
         setValue((value * 9/5) + 32)
     })
+
     return val;
 }
 
@@ -16,6 +17,7 @@ function Thermometer(props) {
 }
 
 export default function Converter() {
+
     const tempValue = useRef(null);
     const [temp, setTemp] = useState(0);
 
@@ -28,6 +30,7 @@ export default function Converter() {
         tempValue.current.value = '';
     })
 
+
     return (
         <div className='text-center'>
             <header>
@@ -36,7 +39,7 @@ export default function Converter() {
                 </div>
             </header>
             <div className='form-group '>
-                <input ref={tempValue} className='form-control m-auto w-25' placeholder='enter a temperature in celsius' type="text"/>
+                <input ref={tempValue} className='form-control m-auto w-25' placeholder='enter a temperature in celsius' type="number"/>
             </div>
             <Thermometer num={useConvertTo(temp)}/>
             <button onClick={convert} className='btn btn-success m-2'>refresh temp</button>

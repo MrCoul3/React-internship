@@ -2,6 +2,7 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 
 export default function NotesList(props) {
+
     const notes = props.notes;
 
     const getListItems = () => {
@@ -18,6 +19,8 @@ export default function NotesList(props) {
             </NavLink>
         )
     }
+
+
     return (
         <ul className="list-group">
             {!notes.length ? <span >There are no notes</span> : getListItems()}

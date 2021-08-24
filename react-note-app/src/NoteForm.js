@@ -3,19 +3,20 @@ import dateFormat from 'dateformat';
 import {Redirect} from "react-router-dom";
 
 export default function NoteForm(props) {
+
     const title = useRef(null)
     const description = useRef(null);
     const [redirect, setRedirect] = useState();
     const isEdit = props.isEdit;
 
     const renderFormTitle = () => isEdit ? <span>Edit Note</span> : <span>Add Note</span>
+
     const renderFormButtons = () => isEdit ?
         (<>
             <button type='submit' className="btn btn-primary float-right">Save Note</button>
             <button onClick={props.deleteNote} className='btn btn-danger float-end'>Delete Note</button>
         </>) :
         (<button type='submit' className="btn btn-primary float-right">Save Note</button>);
-
 
     function saveNote(e) {
         e.preventDefault();

@@ -9,6 +9,7 @@ import NoteForm from "./NoteForm";
 import OpenedNote from "./OpenedNote";
 
 export default function MyNotesApp() {
+
     const notesFromLocalStorage = () => localStorage.getItem('notes') !== null ? JSON.parse(localStorage.getItem('notes')) : [];
     const [notes, setNotes] = useState(notesFromLocalStorage());
     const [currentListItemID, setCurrentListItemID] = useState(Number(window.location.pathname.split('/')[2]));
