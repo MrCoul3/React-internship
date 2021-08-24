@@ -92,9 +92,7 @@ export default function MyNotesApp() {
 
     function saveEditedNote(note) {
         note.id = +currentListItemID
-        console.log(note)
         const notePos = notes.findIndex(n => n.id === note.id)
-        console.log(notePos)
         notes[notePos] = note;
         refreshNotes(notes);
     }
