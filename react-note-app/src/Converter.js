@@ -12,7 +12,7 @@ function useConvertTo(value) {
 
 function Thermometer(props) {
     return (
-        <p className='m-0'>Fahrenheit {props.num}</p>
+        <p className='m-0'>Fahrenheit <span className='fw-bold text-success'>{props.num}</span></p>
     );
 }
 
@@ -26,7 +26,7 @@ export default function Converter() {
     }, [tempValue]);
 
     useEffect(()=> {
-        console.log(tempValue.current.value)
+        // console.log(tempValue.current.value)
         tempValue.current.value = '';
     })
 
@@ -42,7 +42,7 @@ export default function Converter() {
                 <input ref={tempValue} className='form-control m-auto w-25' placeholder='enter a temperature in celsius' type="number"/>
             </div>
             <Thermometer num={useConvertTo(temp)}/>
-            <button onClick={convert} className='btn btn-success m-2'>refresh temp</button>
+            <button onClick={convert} className='btn btn-success m-2'>to Fahrenheit </button>
         </div>
     );
 }
