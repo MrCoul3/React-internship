@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import MyNoteApp from './MyNoteApp';
-import Interfaces from "./Interfaces";
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.scss';
+import Converter from "./Converter";
+import Calculator from "./Calculator";
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <MyNoteApp />
-    <Interfaces />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Calculator/>
+        <Converter/>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 
