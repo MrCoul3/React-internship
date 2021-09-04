@@ -5,7 +5,6 @@ import './index.scss';
 import Converter from "./Converter";
 import Calculator from "./Calculator";
 
-
 ReactDOM.render(
     <React.StrictMode>
         <Calculator/>
