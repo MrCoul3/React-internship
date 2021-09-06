@@ -58,7 +58,7 @@ export default function Calculator() {
         }
     }
     useEffect(()=> {
-        console.log(result)
+        // console.log(result)
         if (input && input.current) {
             input.current.innerHTML = result.toString();
         }
