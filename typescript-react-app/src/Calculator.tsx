@@ -5,7 +5,12 @@ import './Calculator.scss';
 export default function Calculator() {
 
     const keyBoardSymbols: string[] = ['c', '**',  '7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', '.', '+'];
-    const renderKeyboard = () => keyBoardSymbols.map(val => <button value={val}>{val}</button>);
+    const renderKeyboard = () => keyBoardSymbols.map((val: string) => <button value={val}>{val}</button>);
+
+    // function renderKeyboard<Input, Output>(keyBoardSymbols: Input[], fn: (val: Input) => Output): Output[] {
+    //     return keyBoardSymbols.map(fn)
+    // }
+
 
     const [value1, setValue1] = useState<string>('');
     const [valueSign, setValueSign] = useState<string>('');
@@ -15,7 +20,7 @@ export default function Calculator() {
 
     const inputing = (event: React.MouseEvent<HTMLDivElement>) => {
 
-        const val = (event.target as HTMLButtonElement).value;
+        const val: string = (event.target as HTMLButtonElement).value;
         if (val !== undefined) {
             if (!val.match(/[c<%*+/-]/ ) && valueSign === '') {
                 setValue1((value1 + val));
@@ -35,7 +40,6 @@ export default function Calculator() {
             input.current.innerHTML = value1 + valueSign + value2;
         }
     }, [value1, valueSign, value2])
-
 
     const [result, setResult] = useState<number>(0);
     const calculating =  () => {

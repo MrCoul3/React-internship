@@ -11,11 +11,12 @@ function useConvertTo(value: number): number {
     return val as number;
 }
 
-interface IProps {
+
+type Props = {
     num: number
 }
 
-function Thermometer(props: IProps) {
+function Thermometer(props: Props) {
     return (
         <p className='m-0'>Fahrenheit <span className='fw-bold text-success'>{props.num}</span></p>
     );
