@@ -1,6 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 
+
 export default function NotesList(props) {
 
     const notes = props.notes;

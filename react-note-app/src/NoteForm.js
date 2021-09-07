@@ -20,6 +20,7 @@ export default function NoteForm(props) {
         </>) :
         (<button type='submit' className="btn btn-primary float-right">Save Note</button>);
 
+
     function saveNote(e) {
         e.preventDefault();
         const note = {

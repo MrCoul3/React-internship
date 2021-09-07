@@ -8,6 +8,7 @@ import {
 import NoteForm from "./NoteForm";
 import OpenedNote from "./OpenedNote";
 
+
 export default function MyNotesApp() {
 
     const notesFromLocalStorage = () => localStorage.getItem('notes') !== null ? JSON.parse(localStorage.getItem('notes')) : [];
