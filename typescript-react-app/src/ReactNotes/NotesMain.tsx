@@ -7,14 +7,25 @@ import {
 } from 'react-router-dom';
 import NoteForm from "./NoteForm";
 import OpenedNote from "./OpenedNote";
+import dateFormat from "dateformat";
 
-export default function MyNotesApp() {
+export type Note = {
+    id: number;
+    title: string;
+    description: string;
+    date: string;
+    time: string;
+}
+export interface Notes extends Array<Note> {}
 
-    const notesFromLocalStorage = () => localStorage.getItem('notes') !== null ? JSON.parse(localStorage.getItem('notes')) : [];
+export default function NotesMain() {
+
+    const notesFromLocalStorage = () => localStorage.getItem('notes') !== null ? JSON.parse(localStorage.getItem('notes') as string) : [];
     const [notes, setNotes] = useState(notesFromLocalStorage());
-    const [currentListItemID, setCurrentListItemID] = useState(Number(window.location.pathname.split('/')[2]));
+    const [currentListItemID, setCurrentListItemID] = useState<number | null>(Number(window.location.pathname.split('/')[2]));
     const [selectedNote, setSelectedNote] = useState();
     const [isEdit, setIsEdit] = useState(false);
+
     function renderLeftMenu() {
         return (
             <div className='card left-menu'>
@@ -29,16 +40,16 @@ export default function MyNotesApp() {
     function renderLeftMenuHeader() {
         return (
             <div className='card-header'>
-                <Route exact path='/note' render={() =>
+                <Route exact path='/react-notes/note' render={() =>
                     <Link to='/'>
                         <button type="button" style={{color: "#fff"}} className="btn btn-warning">
                             Close Form
                         </button>
                     </Link>}>
                 </Route>
-                {['/', '/note/:id'].map(path =>
+                {['/react-notes', '/react-notes/note/:id'].map(path =>
                     <Route exact path={path} render={() =>
-                        <Link to='/note'>
+                        <Link to='/react-notes/note'>
                             <button type="button" className="btn btn-success">Add Note</button>
                         </Link>}>
                     </Route>)}
@@ -54,23 +65,23 @@ export default function MyNotesApp() {
         }
     }
 
-    function getData(note) {
+    function getData(note: Note) {
         note.id = getID();
         notes.push(note);
         localStorage.setItem('notes', JSON.stringify(notes));
     }
 
-    function viewNote(event) {
+    function viewNote(event: any) {
         const id = event.target.closest('a').getAttribute('id');
         setCurrentListItemID(id);
         setIsEdit(false)
     }
 
     const openedNote = () => {
-        return notes.filter(note => note.id === +currentListItemID);
+        return notes.filter((note: {id: number}) => note.id === +currentListItemID!);
     };
 
-    function refreshNotes(notes) {
+    function refreshNotes(notes: Notes) {
         localStorage.setItem('notes', JSON.stringify(notes));
         setNotes(notes);
         setCurrentListItemID(null);
@@ -78,7 +89,7 @@ export default function MyNotesApp() {
 
     function deleteNote () {
         if (window.confirm('are you sure you want to delete the note?')) {
-            const notePos = notes.findIndex(n => n.id === +currentListItemID)
+            const notePos = notes.findIndex((n: { id: number; }): boolean => n.id === +currentListItemID!)
             notes.splice(notePos, 1)
             refreshNotes(notes);
         }
@@ -86,13 +97,13 @@ export default function MyNotesApp() {
 
     function editNote() {
         setIsEdit(true)
-        const notePos = notes.findIndex(n => n.id === +currentListItemID)
+        const notePos = notes.findIndex((n: { id: number; }): boolean => n.id === +currentListItemID!)
         setSelectedNote(notes[notePos])
     }
 
-    function saveEditedNote(note) {
-        note.id = +currentListItemID
-        const notePos = notes.findIndex(n => n.id === note.id)
+    function saveEditedNote(note: Note) {
+        note.id = +currentListItemID!
+        const notePos = notes.findIndex((n: { id: number; }) => n.id === note.id)
         notes[notePos] = note;
         refreshNotes(notes);
     }
@@ -100,12 +111,12 @@ export default function MyNotesApp() {
     function renderRightForm() {
         return (
             <div>
-                <Route exact path='/note' render={() =>
+                <Route exact path='/react-notes/note' render={() =>
                     <NoteForm saveNote={getData}/>
                 }/>
-                <Route exact path='/note/:id' render={() =>
+                <Route exact path='/react-notes/note/:id' render={() =>
                     isEdit ? <NoteForm saveNote={saveEditedNote} currNote={selectedNote} isEdit={isEdit} deleteNote={deleteNote} /> :
-                    (currentListItemID !== null ? <OpenedNote editNote={editNote} deleteNote={deleteNote} note={openedNote()}/> : <Redirect to='/'/>)
+                        (currentListItemID !== null ? <OpenedNote editNote={editNote} deleteNote={deleteNote} note={openedNote()}/> : <Redirect to='/react-notes'/>)
                 }/>
             </div>
         );

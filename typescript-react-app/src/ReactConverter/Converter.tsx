@@ -36,20 +36,23 @@ export default function Converter() {
 
     useEffect(()=> {
         if (tempValue && tempValue.current) {
-            tempValue.current.value = '';
+            tempValue.current.value = '0';
+                tempValue.current.addEventListener('focus', function () {
+                    this.value = '';
+                })
         }
-    })
+    }, [temp])
 
 
     return (
         <div className='text-center'>
             <header>
-                <div className="header-bg">
-                    <h1 className='text-white h2'><span className='text-warning'>S</span>imple React Converter <span className='text-muted small'>on TS</span> </h1>
+                <div className="header-bg header-bg--green">
+                    <h1 className='title main-title h2'><span className='text-warning'>S</span>imple React Converter </h1>
                 </div>
             </header>
             <div className='form-group '>
-                <input ref={tempValue} className='form-control m-auto w-25' placeholder='enter a temperature in celsius' type="number"/>
+                <input ref={tempValue} defaultValue='0' className='form-control m-auto w-25' placeholder='enter a temperature in celsius' type="number"/>
             </div>
             <Thermometer num={useConvertTo(temp)}/>
             <button onClick={convert} className='btn btn-success m-2'>to Fahrenheit </button>

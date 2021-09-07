@@ -11,7 +11,6 @@ export default function Calculator() {
     //     return keyBoardSymbols.map(fn)
     // }
 
-
     const [value1, setValue1] = useState<string>('');
     const [valueSign, setValueSign] = useState<string>('');
     const [value2, setValue2] = useState<string>('');
@@ -81,8 +80,7 @@ export default function Calculator() {
             <div className='text-center'>
                 <header>
                     <div className="header-bg header-bg--light">
-                        <h1 className='text-white h2'>Simple <span className='text-danger'>C</span>alculator<span
-                            className='text-muted small'> on TS</span></h1>
+                        <h1 className='title main-title h2'>Simple <span className='text-danger'>C</span>alculator</h1>
                     </div>
                 </header>
                 <div className="main-frame">

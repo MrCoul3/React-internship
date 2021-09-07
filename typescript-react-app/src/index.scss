@@ -19,6 +19,9 @@ h1 {
   &--light {
     background: $light;
   }
+  &--green {
+    background: $green;
+}
   .main-title {
     font-size: 80px;
     font-weight: 400;

@@ -1,6 +1,13 @@
 import React from "react";
+import {Note} from "./NotesMain";
 
-export default function OpenedNote(props) {
+type Props = {
+    note: [Note]
+    editNote(): void
+    deleteNote(): void
+}
+
+export default function OpenedNote(props: Props) {
 
     const [note] = props.note;
 

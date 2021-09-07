@@ -2,6 +2,8 @@ import React, {useRef, useState} from "react";
 import dateFormat from 'dateformat';
 import {Redirect} from "react-router-dom";
 
+
+
 export default function NoteForm(props) {
 
     const title = useRef(null)
