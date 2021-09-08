@@ -6,6 +6,7 @@ import ReactNotesApp from "../ReactNotes/ReactNotesApp";
 import Calculator from "../ReactSimpleCalculator/Calculator";
 import Converter from "../ReactConverter/Converter";
 import ApiTestTS from "../TSApiTest/ApiTest";
+import Footer from "../Footer/Footer";
 
 const tooltipsParams = {
     'data-background-color': "#5A5A5A",
@@ -29,25 +30,38 @@ function BackToHomeBtn() {
 export default function MainPage() {
     return (
         <>
+
             <Route exact path='/:react' render={() =>
                 <BackToHomeBtn />
             }/>
             <Route exact path='/' render={() =>
                 <section id='Main-page'>
-                    <div className="components-menu">
-                        <NavLink to='/react-notes'>
-                            <img className='component-icon' src="./images/component-icons/note-app-icon.png" alt=""/>
-                        </NavLink>
-                        <NavLink to='/converter'>
-                            <img className='component-icon' src="./images/component-icons/converter-app-icon.png" alt=""/>
-                        </NavLink>
-                        <NavLink to='/calculator'>
-                            <img className='component-icon' src="./images/component-icons/calculator-app-icon.png" alt=""/>
-                        </NavLink>
-                        <NavLink to='/api-test'>
-                            <img className='component-icon' src="./images/component-icons/apitest-app-icon.png" alt=""/>
-                        </NavLink>
-                    </div>
+
+                    <header>
+                        <div className='header-bg--gradient'>
+                            <h2 className='header-title'>Portfolio</h2>
+                            <div id="start-ring"></div>
+                        </div>
+
+                    </header>
+
+                    <main>
+                        <div className="components-menu">
+                            <NavLink to='/react-notes'>
+                                <img className='component-icon' src="./images/component-icons/note-app-icon.png" alt=""/>
+                            </NavLink>
+                            <NavLink to='/converter'>
+                                <img className='component-icon' src="./images/component-icons/converter-app-icon.png" alt=""/>
+                            </NavLink>
+                            <NavLink to='/calculator'>
+                                <img className='component-icon' src="./images/component-icons/calculator-app-icon.png" alt=""/>
+                            </NavLink>
+                            <NavLink to='/api-test'>
+                                <img className='component-icon' src="./images/component-icons/apitest-app-icon.png" alt=""/>
+                            </NavLink>
+                        </div>
+                    </main>
+                    <Footer />
                 </section>}/>
 
             <Switch>

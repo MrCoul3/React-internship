@@ -1,13 +1,13 @@
 import React, {FormEvent, useEffect, useRef, useState} from "react";
 
 function getApi(url: string, method: "GET") {
-
     return fetch(url, {method})
         .then(response => {
-            if (!response.ok) {
-                throw new Error(response.statusText)
+            if (response.ok) {
+                return response.json()
+            } else {
+                return new Error(response.statusText)
             }
-            return response.json()
         })
 }
 
@@ -24,10 +24,10 @@ export default function ApiTestTS() {
             const url: string = input.current.value;
             const method = "GET";
             const request = getApi(url, method)
-                // console.log(request)
                 .then(data => {
                     setRequestPostsData(data);
-                });
+                })
+                // .catch()
         }
     }
 
