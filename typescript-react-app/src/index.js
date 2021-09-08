@@ -10,7 +10,7 @@ import ReduxToDo from "./RduxToDo/ReduxToDo";
 ReactDOM.render(
     <React.StrictMode>
        {/*<Apps />*/}
-       <ReduxToDo />
+       {/*<ReduxToDo />*/}
     </React.StrictMode>,
     document.getElementById('root')
 );
