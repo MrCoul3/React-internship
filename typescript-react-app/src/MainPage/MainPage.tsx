@@ -30,7 +30,6 @@ function BackToHomeBtn() {
 export default function MainPage() {
     return (
         <>
-
             <Route exact path='/:react' render={() =>
                 <BackToHomeBtn />
             }/>
