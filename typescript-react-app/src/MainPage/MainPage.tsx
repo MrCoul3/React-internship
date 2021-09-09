@@ -3,7 +3,7 @@ import {Route, Switch, NavLink} from "react-router-dom";
 import './MainPage.scss';
 import ReactTooltip from "react-tooltip";
 import ReactNotesApp from "../ReactNotes/ReactNotesApp";
-import Calculator from "../ReactSimpleCalculator/Calculator";
+import ReactCalculatorApp from "../ReactSimpleCalculator/ReactCalculatorApp";
 import Converter from "../ReactConverter/Converter";
 import ApiTestTS from "../TSApiTest/ApiTest";
 import Footer from "../Footer/Footer";
@@ -66,7 +66,7 @@ export default function MainPage() {
             <Switch>
                 <Route exact path='/react-notes' component={ReactNotesApp}/>
                 <Route exact path='/converter' component={Converter}/>
-                <Route exact path='/calculator' component={Calculator}/>
+                <Route exact path='/calculator' component={ReactCalculatorApp}/>
                 <Route exact path='/api-test' component={ApiTestTS}/>
             </Switch>
 
