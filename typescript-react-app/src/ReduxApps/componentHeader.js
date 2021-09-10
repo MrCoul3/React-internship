@@ -11,6 +11,7 @@ const countReducer = function (state = 0, action) {
         default: return state;
     }
 }
+
 const toDoStore = createStore(countReducer);
 
 const mapDispatchToProps = dispatch => {
