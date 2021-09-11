@@ -25,6 +25,9 @@ h1 {
   &--gradient {
     background: linear-gradient(106.01deg, rgba(0, 0, 0, 0.91) 9.82%, rgba(11, 57, 79, 0.9) 51.26%, rgba(9, 86, 122, 0.86) 71.74%, rgba(6, 113, 163, 0.82) 100%);
   }
+  &--todoBg {
+    background: $todoBg;
+  }
   .main-title {
     font-size: 80px;
     font-weight: 400;

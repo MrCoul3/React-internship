@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import {ThemeContext, themes, TypesThemes, TypesTheme } from "../ContextData/Theme";
+import {ThemeContext, themes, TypesThemes, TypesTheme } from "../ContextData/Themes";
 import Calculator from "./Calculator";
 
 

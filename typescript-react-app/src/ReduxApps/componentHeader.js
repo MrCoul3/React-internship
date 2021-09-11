@@ -1,4 +1,4 @@
-import {connect, Provider} from "react-redux";
+import {connect, Provider, useSelector} from "react-redux";
 import {createStore} from "redux";
 import React from "react";
 
@@ -13,6 +13,7 @@ const countReducer = function (state = 0, action) {
 }
 
 const toDoStore = createStore(countReducer);
+
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -29,6 +30,7 @@ const mapStateToProps = state => {
     };
 };
 
+
 const Header = ({count, handleDecrementClick, handleIncrementClick, handleDefaultClick, handle100Click}) => (
     <header>
         <h1>ToDo {count}</h1>
@@ -39,12 +41,20 @@ const Header = ({count, handleDecrementClick, handleIncrementClick, handleDefaul
     </header>
 );
 
+function Body() {
+    const selector = useSelector(mapStateToProps);
+    console.log(selector)
+    return (
+      <div></div>
+    );
+}
+
 const Container = connect(mapStateToProps, mapDispatchToProps)(Header);
 
-export default function ReduxToDo() {
+export default function Comp() {
     return (
         <Provider store={toDoStore}>
-            <Container/>
+            <Body/>
         </Provider>
     );
 }

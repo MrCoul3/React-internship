@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
-import { ThemeContext } from "../ContextData/Theme";
+import { ThemeContext } from "../ContextData/Themes";
 
 export default function ThemeChangerButton() {
     const value = useContext(ThemeContext);
