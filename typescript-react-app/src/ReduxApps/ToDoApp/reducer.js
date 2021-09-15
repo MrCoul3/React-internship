@@ -1,7 +1,7 @@
 export default  function counterReducer(state = [], action) {
-
+    const currentID = [];
     if (action.type === 'add') {
-        return [...state, {text: action.payload, select: false}]
+        return [...state, {text: action.payload, id: [...currentID, ]}]
     }
 
     if (action.type === 'selectNote') {
