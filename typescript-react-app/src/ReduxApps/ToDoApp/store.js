@@ -1,6 +1,17 @@
-import {createStore} from "redux";
+import {applyMiddleware, createStore} from "redux";
 import noteReducer from "./reducer";
 
-const store = createStore(noteReducer);
+const logger = store => next => action => {
+    console.log('dispatching', action)
+    let result = next(action)
+    console.log('next state', store.getState())
+    return result
+}
+
+
+const store = createStore(
+    noteReducer,
+    applyMiddleware(logger)
+);
 
 export default store;

@@ -15,7 +15,7 @@ export default  function noteReducer(state = [], action) {
     }
 
     if (action.type === 'completeNote') {
-        console.log(action.id)
+        // console.log(action.id)
         const newArr = [...state]
         for (let obj of newArr) {
             if (obj.id === +action.id) {

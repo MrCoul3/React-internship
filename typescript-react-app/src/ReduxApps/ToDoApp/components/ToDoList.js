@@ -17,7 +17,7 @@ export default function ToDoList() {
     const [filteredArray, setFilteredArray] = useState([]);
 
     useEffect(()=> {
-        console.log(currentState)
+        // console.log(currentState)
         setFilteredArray(currentState)
     }, [currentState])
 
