@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 const selector = state => state;
 
@@ -15,20 +15,24 @@ export default function ToDoList() {
     const currentState = useSelector(selector);
 
     const [filteredArray, setFilteredArray] = useState([]);
+
+    useEffect(()=> {
+        console.log(currentState)
+        setFilteredArray(currentState)
+    }, [currentState])
+
     const handleFilterAll = () => {
+        setFilteredArray(currentState);
     }
     const handleFilterActive = () => {
-
+        setFilteredArray([...currentState].filter(obj => !obj.completed));
     }
     const handleFilterCompleted = () => {
-
-        return [...currentState].filter(obj => obj.completed)
+        setFilteredArray([...currentState].filter(obj => obj.completed));
     }
 
-    console.log(currentState)
 
-
-    const renderToDoList = currentState.map(obj =>
+    const renderToDoList = filteredArray.map(obj =>
         <div
             status={obj.completed ? 'completed' : 'active'}
             onClick={handleCompleteNote}

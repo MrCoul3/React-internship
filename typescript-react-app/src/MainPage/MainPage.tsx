@@ -7,6 +7,7 @@ import ReactCalculatorApp from "../ReactSimpleCalculator/ReactCalculatorApp";
 import Converter from "../ReactConverter/Converter";
 import ApiTestTS from "../TSApiTest/ApiTest";
 import Footer from "../Footer/Footer";
+import ReduxToDoApp from "../ReduxApps/ToDoApp/ToDoApp";
 
 const tooltipsParams = {
     'data-background-color': "#5A5A5A",
@@ -31,7 +32,7 @@ export default function MainPage() {
     return (
         <>
             <Route exact path='/:react' render={() =>
-                <BackToHomeBtn />
+                <BackToHomeBtn/>
             }/>
             <Route exact path='/' render={() =>
                 <section id='Main-page'>
@@ -47,20 +48,34 @@ export default function MainPage() {
                     <main>
                         <div className="components-menu">
                             <NavLink to='/react-notes'>
-                                <img className='component-icon' src="./images/component-icons/note-app-icon.png" alt=""/>
+                                <img className='component-icon' src="./images/component-icons/note-app-icon.png"
+                                     alt=""/>
+                                <div className='text-center'>React + TypeScript</div>
                             </NavLink>
                             <NavLink to='/converter'>
-                                <img className='component-icon' src="./images/component-icons/converter-app-icon.png" alt=""/>
+                                <img className='component-icon' src="./images/component-icons/converter-app-icon.png"
+                                     alt=""/>
+                                <div className='text-center'>React + TypeScript</div>
                             </NavLink>
                             <NavLink to='/calculator'>
-                                <img className='component-icon' src="./images/component-icons/calculator-app-icon.png" alt=""/>
+                                <img className='component-icon' src="./images/component-icons/calculator-app-icon.png"
+                                     alt=""/>
+                                <div className='text-center'>React + TypeScript + React.Context</div>
                             </NavLink>
                             <NavLink to='/api-test'>
-                                <img className='component-icon' src="./images/component-icons/apitest-app-icon.png" alt=""/>
+                                <img className='component-icon' src="./images/component-icons/apitest-app-icon.png"
+                                     alt=""/>
+                                <div className='text-center'>React + TypeScript</div>
                             </NavLink>
+                            <NavLink to='/todo'>
+                                <img className='component-icon' src="./images/component-icons/todo-app-icon.png"
+                                     alt=""/>
+                                     <div className='text-center'>React + Redux</div>
+                            </NavLink>
+
                         </div>
                     </main>
-                    <Footer />
+                    <Footer/>
                 </section>}/>
 
             <Switch>
@@ -68,6 +83,7 @@ export default function MainPage() {
                 <Route exact path='/converter' component={Converter}/>
                 <Route exact path='/calculator' component={ReactCalculatorApp}/>
                 <Route exact path='/api-test' component={ApiTestTS}/>
+                <Route exact path='/todo' component={ReduxToDoApp}/>
             </Switch>
 
         </>
