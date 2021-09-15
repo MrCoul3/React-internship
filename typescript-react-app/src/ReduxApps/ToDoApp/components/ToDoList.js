@@ -1,22 +1,53 @@
 import {useDispatch, useSelector} from "react-redux";
-import React from "react";
+import React, {useState} from "react";
 
 const selector = state => state;
 
 export default function ToDoList() {
     const dispatch = useDispatch();
 
-    const handleSelectNote = (e) => {
-        dispatch({type: 'selectNote', id: e.target.id})
+    const handleDeleteNote = (e) => {
+        dispatch({type: 'deleteNote', id: e.target.id})
+    }
+    const handleCompleteNote = (e) => {
+        dispatch({type: 'completeNote', id: e.target.closest('div').id})
+    }
+    const currentState = useSelector(selector);
+
+    const [filteredArray, setFilteredArray] = useState([]);
+    const handleFilterAll = () => {
+    }
+    const handleFilterActive = () => {
+
+    }
+    const handleFilterCompleted = () => {
+
+        return [...currentState].filter(obj => obj.completed)
     }
 
-    const select = useSelector(selector);
+    console.log(currentState)
 
-    console.log(select)
-    const render = select.map(obj => <div id={obj.id} onClick={handleSelectNote}>{obj.text}</div>)
+
+    const renderToDoList = currentState.map(obj =>
+        <div
+            status={obj.completed ? 'completed' : 'active'}
+            onClick={handleCompleteNote}
+            id={obj.id}
+            className={'note-element m-auto d-flex justify-content-between'}>
+            <span className='check'><strong  style={obj.completed ? { display: 'block'} : {display: 'none'}}>&#10003;</strong></span>
+            <span className={'w-100 ' + (obj.completed ? 'note-completed' : '')}>{obj.text}</span>
+            <span className='delete-btn' id={obj.id} onClick={handleDeleteNote}>delete</span>
+        </div>)
 
 
     return (
-        <div className='body'>{render}</div>
+        <div className='body'>
+            {renderToDoList}
+            <div className='service-buttons d-flex m-auto justify-content-around'>
+                <button onClick={handleFilterAll} className='btn btn-secondary'>All</button>
+                <button onClick={handleFilterActive} className='btn btn-secondary'>Active</button>
+                <button onClick={handleFilterCompleted} className='btn btn-secondary'>Completed</button>
+            </div>
+        </div>
     );
 }

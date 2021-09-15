@@ -6,11 +6,13 @@ export default function Header() {
     const dispatch = useDispatch();
     const [inputValue, setInputValue] = useState();
     const handleChange = (e) => setInputValue(e.target.value)
+    const [count, setCount] = useState(0);
 
     function handleKeyDown(e) {
         const InputDataTrimmed = e.target.value.trim();
+        setCount(count + 1);
         if (e.key === 'Enter' && InputDataTrimmed) {
-            dispatch({type: 'add', payload: InputDataTrimmed})
+            dispatch({type: 'addNote', payload: InputDataTrimmed, count: count})
             setInputValue('');
         }
     }
@@ -25,7 +27,7 @@ export default function Header() {
                 <input
                     onChange={handleChange}
                     value={inputValue}
-                    className='form-control w-50 m-auto'
+                    className='main-input form-control w-50'
                     onKeyDown={handleKeyDown}
                     autoFocus={true}
                     type="text"
