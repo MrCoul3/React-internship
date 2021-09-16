@@ -62,11 +62,11 @@ export default function MainPage() {
                                      alt=""/>
                                 <div className='text-center'>React + TypeScript + React.Context</div>
                             </NavLink>
-                            <NavLink to='/api-test'>
-                                <img className='component-icon' src="./images/component-icons/apitest-app-icon.png"
-                                     alt=""/>
-                                <div className='text-center'>React + TypeScript</div>
-                            </NavLink>
+                            {/*<NavLink to='/api-test'>*/}
+                            {/*    <img className='component-icon' src="./images/component-icons/apitest-app-icon.png"*/}
+                            {/*         alt=""/>*/}
+                            {/*    <div className='text-center'>React + TypeScript</div>*/}
+                            {/*</NavLink>*/}
                             <NavLink to='/todo'>
                                 <img className='component-icon' src="./images/component-icons/todo-app-icon.png"
                                      alt=""/>
@@ -82,7 +82,7 @@ export default function MainPage() {
                 <Route exact path='/react-notes' component={ReactNotesApp}/>
                 <Route exact path='/converter' component={Converter}/>
                 <Route exact path='/calculator' component={ReactCalculatorApp}/>
-                <Route exact path='/api-test' component={ApiTestTS}/>
+                {/*<Route exact path='/api-test' component={ApiTestTS}/>*/}
                 <Route exact path='/todo' component={ReduxToDoApp}/>
             </Switch>
 

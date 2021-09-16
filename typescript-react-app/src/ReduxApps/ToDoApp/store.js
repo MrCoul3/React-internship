@@ -1,5 +1,6 @@
 import {applyMiddleware, createStore} from "redux";
 import noteReducer from "./reducer";
+import thunk from "redux-thunk";
 
 const logger = store => next => action => {
     console.log('dispatching', action)
@@ -11,7 +12,7 @@ const logger = store => next => action => {
 
 const store = createStore(
     noteReducer,
-    applyMiddleware(logger)
+    applyMiddleware(logger, thunk)
 );
 
 export default store;
